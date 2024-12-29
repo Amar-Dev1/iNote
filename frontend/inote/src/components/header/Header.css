@@ -1,0 +1,11 @@
+nav{
+    box-shadow: 5px 5px 20px #666;
+    flex-basis: 80%;
+}
+nav a{
+    transition: .4s ease-in-out;
+}
+nav a:hover{
+    transform: scale(1.08);
+    background-color: #555;
+}
