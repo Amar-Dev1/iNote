@@ -1,0 +1,23 @@
+.note,
+.note .note-header .favorite {
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.note .note-header .favorite:hover {
+    transform: scale(1.1);
+}
+
+.note .note-body {
+    background-color: #333;
+}
+
+.note .note-body .intro {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.note a {
+    border-radius: var(--radius);
+}

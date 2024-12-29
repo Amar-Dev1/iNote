@@ -1,11 +1,25 @@
-nav{
-    box-shadow: 5px 5px 20px #666;
-    flex-basis: 80%;
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(7px);
 }
-nav a{
+
+.header nav,
+.add-note {
+    box-shadow: 5px 5px 20px #666;
+    border-radius: var(--radius);
     transition: .4s ease-in-out;
 }
-nav a:hover{
+
+.header nav a {
+    transition: .4s ease-in-out;
+    border-radius: var(--radius);
+}
+
+.header nav a:hover,
+.header .add-note:hover {
     transform: scale(1.08);
     background-color: #555;
 }
