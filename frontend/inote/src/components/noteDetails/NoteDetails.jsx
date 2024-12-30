@@ -1,30 +1,30 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 import './NoteDetails.css';
-import { Container } from 'react-bootstrap';
 import { GrFavorite } from 'react-icons/gr';
-import { ImCross } from "react-icons/im";
-const NoteDetails = (props) => {
+import { ImCross } from 'react-icons/im';
+
+const NoteDetails = ({ title, intro, date, onClose }) => {
     return (
-        <div fluid className='details-wrapper'>
-            <ImCross className='exit-icon' />
-            <div className='note-details d-flex flex-column p-3 rounded'>
-                <div className="note-header d-flex justify-content-between my-3">
-                    <h3 className="title">{props.noteTitle}</h3>
-                    <small className='favorite fs-5'><GrFavorite /></small>
+        <div className="details-overlay">
+            <div className="note-details rounded d-flex flex-column">
+                <ImCross className="exit-icon" onClick={onClose} />
+                <div className="note-header d-flex justify-content-between">
+                    <h3>{title}</h3>
+                    <GrFavorite className="favorite-icon" />
                 </div>
-                <div className="note-body text-center flex-grow-1 rounded">
-                    <p className="intro fs-5 w-80 py-4 px-2">{props.noteIntro}</p>
+                <div className="note-body my-3 bg-light rounded p-2 flex-grow-1">
+                    <p className='intro'>{intro}</p>
                 </div>
-                <div className="note-footer my-3 d-flex justify-content-between">
-                    <span className='date'>🔵 {props.noteDate}</span>
-                    <div className="operations">
-                        <a href="#" className='btn btn-warning mx-1'>Update</a>
-                        <a href="#" className='btn btn-danger'>Delete</a>
+                <div className="note-footer d-flex justify-content-between">
+                    <span>📅 {date}</span>
+                    <div className="actions">
+                        <button className="btn btn-warning mx-1">Update</button>
+                        <button className="btn btn-danger">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default NoteDetails
+export default NoteDetails;

@@ -8,8 +8,3 @@ class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
         fields = ["id", "title", "content", "created_at", "is_favorite"]
-
-    # def validate_title(title, self):
-    #     if len(title) <= 1:
-    #         raise serializers.ValidationError("title must be at least 2 characters ❗")
-    #     return title

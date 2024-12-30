@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Note.css';
+import NoteDetails from '../noteDetails/NoteDetails';
 import { GrFavorite } from 'react-icons/gr';
-const Note = (props) => {
+
+const Note = ({ noteTitle, noteIntro, noteDate }) => {
+    const [isDetailsVisible, setDetailsVisible] = useState(false);
+
+    const toggleDetails = () => {
+        setDetailsVisible(!isDetailsVisible);
+    };
+
     return (
-        <div className='note rounded bg-dark text-light p-3 w-100 d-flex flex-column'>
-            <div className="note-header d-flex justify-content-between">
-                <h3 className="title">{props.noteTitle}</h3>
-                <small className='favorite fs-5'><GrFavorite /></small>
+        <>
+            <div className="note card bg-dark text-light p-3 w-100">
+                <div className="note-header d-flex justify-content-between">
+                    <h3 className="title">{noteTitle}</h3>
+                    <GrFavorite className="favorite-icon" />
+                </div>
+                <div className="note-body my-3 rounded flex-grow-1 p-1">
+                    <p className="intro">{noteIntro}</p>
+                </div>
+                <div className="note-footer d-flex justify-content-between align-items-center">
+                    <span className="date">📅 {noteDate}</span>
+                    <button className="btn btn-primary" onClick={toggleDetails}>
+                        View
+                    </button>
+                </div>
             </div>
-            <div className="note-body my-3 rounded d-flex align-items-center ">
-                <p className="intro fs-5 w-80 py-4 px-2">{props.noteIntro}</p>
-            </div>
-            <div className="note-footer d-flex justify-content-between align-items-center">
-                <span className='date'>🔵 {props.noteDate}</span>
-            <a href="#" className='btn btn-primary px-4 fw-bold'>View</a>
-            </div>
-        </div>
-    )
-}
+
+            {isDetailsVisible && (
+                <NoteDetails
+                    title={noteTitle}
+                    intro={noteIntro}
+                    date={noteDate}
+                    onClose={toggleDetails}
+                />
+            )}
+        </>
+    );
+};
 
 export default Note;

@@ -1,7 +1,12 @@
 .note,
 .note .note-header .favorite {
     cursor: pointer;
-    transition: .2s ease-in-out;
+    transition: .4s ease-in-out;
+    box-shadow: 5px 5px 15px #555;
+}
+
+.note:hover {
+    transform: scale(1.02);
 }
 
 .note .note-header .favorite:hover {

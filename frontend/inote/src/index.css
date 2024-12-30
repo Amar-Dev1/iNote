@@ -4,6 +4,19 @@
     --radius: 40px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--main-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color:var(--secondary-color);
+    border-radius: 10px;
+  }
+
 html,
 body {
     background-color: aliceblue !important;
@@ -17,4 +30,11 @@ a {
 
 li {
     list-style-type: none;
+}
+
+.show {
+    display: block;
+}
+.hide{
+    display: none;
 }

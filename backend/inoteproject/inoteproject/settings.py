@@ -53,9 +53,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5174",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5174",
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'inoteproject.urls'
 
 TEMPLATES = [
